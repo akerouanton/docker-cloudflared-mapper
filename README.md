@@ -4,8 +4,10 @@ This an experimental Docker Engine port-mapper that integrates with Cloudflare
 Zero Trust Tunnels.
 
 > [!NOTE]  
-> This is experimental work based on an unreleased feature of Docker Engine.
-> See [[RFC] Custom port-mappers](https://github.com/moby/moby/issues/50259)
+> This is experimental work based on an unreleased Docker Engine feature. Expect
+> bugs and rough edges.
+>
+> See [[RFC] Custom port-mappers](https://github.com/moby/moby/issues/50259).
 
 ## How to use?
 
@@ -92,3 +94,6 @@ $ docker run -it --rm postgres:15 psql -h db.aker.dev -p 5432 -U admin -d myapp
 ## TODO
 
 - [ ] Improve the output of `docker ps`
+- [ ] Do not barf out on `MapPorts` when CNAMEs already exist
+- [ ] Fix raw TCP support
+- [ ] Let the plugin create tunnels and run cloudflared process
