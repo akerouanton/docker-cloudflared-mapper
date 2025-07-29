@@ -1,0 +1,27 @@
+
+{
+	"description": "Map Docker ports to Cloudflare Tunnels",
+	"documentation": "https://github.com/akerouanton/docker-cloudflared-mapper",
+	"entrypoint": ["/cloudflared-mapper"],
+	"network": {
+		"type": "host"
+	},
+	"interface": {
+		"types": ["docker.portmapper/1.0"],
+		"socket": "cloudflared.sock"
+	},
+	"env": [
+		{
+			"name": "CLOUDFLARE_API_TOKEN",
+			"description": "Cloudflare API token",
+			"value": "",
+			"settable": ["value"]
+		},
+		{
+			"name": "CLOUDFLARE_ACCOUNT_ID",
+			"description": "Cloudflare account ID",
+			"value": "",
+			"settable": ["value"]
+		}
+	]
+}

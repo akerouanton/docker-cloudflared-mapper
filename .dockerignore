@@ -1,0 +1,7 @@
+*
+
+!cmd/
+!portmapper/
+!sliceutil/
+!go.mod
+!go.sum
